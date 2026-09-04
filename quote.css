@@ -1,0 +1,30 @@
+/* 
+  here  any element with the class narrow will be selected this is styling on point
+*/
+.narrow {
+  padding-top: 70px;
+}
+/*
+here all elements for Id quote form will be selected for direct styling as well as adds a 4px solid
+line at the top from the variable css red. 
+*/
+#quote-form {
+  border-top: 4px solid var(--red);
+  box-shadow: 0 10px 28px #0000000b;
+}
+
+/* 
+  Selects every <h2> heading inside #quote-form as well as adds space around the button bellow the button and
+  then a thin line is added underneath the heading
+*/
+#quote-form h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+  /* 
+  Adds a 16px amounts of space above the button.
+  */ 
+#quote-form .button {
+  margin-top: 16px;
+}

@@ -1,0 +1,18 @@
+/* Adds space above the narrow section */
+.narrow {
+padding-top: 70px;
+}
+/* Adds a red top border and a subtle shadow to the booking form */
+#book-form {
+border-top: 4px solid var(--red);
+box-shadow: 0 10px 28px #0000000b;
+}
+/* Adds spacing and a bottom border to the booking form heading */
+#book-form h2 {
+padding-bottom: 10px;
+border-bottom: 1px solid var(--line);
+}
+/* Adds space above the booking button */
+#book-form .button {
+margin-top: 16px;
+}

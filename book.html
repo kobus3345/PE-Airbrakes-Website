@@ -1,0 +1,189 @@
+<!-- Hazel Roman -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book a Vehicle | PE Airbrakes</title>
+
+    <!-- Load the shared site styling before the booking-page-specific rules -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="book.css" />
+  </head>
+
+  <body>
+    <!-- Quick-access company details displayed above the main navigation -->
+    <div class="utility">
+      <div class="container">
+        <a href="tel:0414547473">☎ 041 454 7473</a>
+        <a href="mailto:info@peairbrakes.co.za">✉ info@peairbrakes.co.za</a>
+        <span>⌖ 62, 63 Warbler Street, Cotswold</span>
+      </div>
+    </div>
+
+    <!-- Main website header containing the company identity and navigation -->
+    <header>
+      <div class="container nav">
+
+        <!-- Company logo and branding link back to the home page -->
+        <a class="brand" href="index.html">
+          <span class="logo">
+            <img src="../src/imports/loadinglogo.png" alt="" />
+          </span>
+          <span>
+            <b>PE <i>AIRBRAKES</i></b>
+            <small>TRUCK BRAKE SPECIALISTS</small>
+          </span>
+        </a>
+
+        <!-- Primary navigation used on larger screens -->
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Prominent actions for requesting a quote or making a booking -->
+        <div class="actions">
+          <a class="outline button" href="quote.html">Get a Quote</a>
+          <a class="button" href="book.html">Book a Vehicle</a>
+        </div>
+
+        <!-- Mobile menu trigger shown when the navigation collapses -->
+        <button class="menu">☰</button>
+      </div>
+
+      <!-- Navigation links displayed when the mobile menu is opened -->
+      <div class="mobile-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="quote.html">Get a Quote</a>
+        <a href="book.html">Book a Vehicle</a>
+      </div>
+    </header>
+
+    <!-- Booking page content and vehicle repair reservation form -->
+    <main class="container page narrow">
+      <p class="eyebrow">Book a Vehicle</p>
+      <h1>Book Your Vehicle for Repairs</h1>
+      <p class="lead">
+        Reserve a bay and drop off your vehicle at a time that suits you.
+      </p>
+
+      <!-- Collect the customer's contact information and vehicle requirements -->
+      <form class="form-card" id="book-form">
+        <h2>Owner and Vehicle Details</h2>
+
+        <!-- Organises the booking fields into a structured form layout -->
+        <div class="form-grid">
+          <label>Full Name<input name="name" required /></label>
+          <label>Company Name<input name="company" /></label>
+          <label>Phone Number<input name="phone" type="tel" required /></label>
+          <label>Email Address<input name="email" type="email" required /></label>
+
+          <label>
+            Registration Number
+            <input name="registration" required />
+          </label>
+
+          <!-- Allows the customer to identify the category of vehicle being booked -->
+          <label>
+            Vehicle Type
+            <select required>
+              <option value="">Select type...</option>
+              <option>Rigid Truck</option>
+              <option>Interlink / Semi-truck</option>
+              <option>B-train / Multi-combination</option>
+            </select>
+          </label>
+
+          <label>Make<input name="make" required /></label>
+          <label>Model<input name="model" required /></label>
+
+          <!-- Service selection helps identify the type of repair requested -->
+          <label>
+            Service Required
+            <select name="service" required>
+              <option value="">Select service...</option>
+              <option>Air Brake System Repair</option>
+              <option>Brake Drum / Disc Repair</option>
+              <option>ABS Diagnostics</option>
+              <option>Safety Inspection</option>
+            </select>
+          </label>
+
+          <label>
+            Preferred Date
+            <input name="date" type="date" required />
+          </label>
+
+          <!-- Provides predefined appointment periods instead of free-text times -->
+          <label>
+            Preferred Time
+            <select required>
+              <option value="">Select time...</option>
+              <option>07:00 - 08:00</option>
+              <option>08:00 - 09:00</option>
+              <option>09:00 - 10:00</option>
+              <option>10:00 - 11:00</option>
+            </select>
+          </label>
+
+          <!-- Gives the customer space to explain the vehicle's current problem -->
+          <label class="full">
+            Problem Description
+            <textarea rows="4"></textarea>
+          </label>
+        </div>
+
+        <!-- Important booking information shown before submission -->
+        <p class="notice">
+          ⚠ Please arrange alternative transport. We will confirm repair costs
+          before proceeding.
+        </p>
+
+        <button class="button" type="submit">Confirm Booking</button>
+      </form>
+    </main>
+
+    <!-- Displays the site's copyright information -->
+    <footer>
+      <div class="copyright">© 2026 PE Airbrakes. All rights reserved.</div>
+    </footer>
+
+    <script>
+      // Connect the mobile menu button to the navigation panel
+      const menu = document.querySelector(".menu");
+      const links = document.querySelector(".mobile-links");
+
+      // Toggle the menu visibility whenever the mobile button is selected
+      menu.addEventListener("click", () => links.classList.toggle("open"));
+
+      // Locate the vehicle booking form so its submission can be handled with JavaScript
+      const form = document.querySelector("#book-form");
+
+      // Replace the form with a confirmation message after a successful submission
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Capture the submitted form values so the vehicle registration can be shown
+        const data = new FormData(form);
+
+        // Present the customer with an on-page booking confirmation
+        form.innerHTML = `
+          <div class="success">
+            <b>✓</b>
+            <h2>Booking Confirmed!</h2>
+            <p>
+              Your booking for ${data.get("registration")} has been received.
+              We will contact you to confirm the appointment.
+            </p>
+          </div>`;
+      });
+    </script>
+  </body>
+</html>

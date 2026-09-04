@@ -1,0 +1,38 @@
+/* Grid layout for contact info and form */
+.contact-grid 
+{
+  align-items: start; /* Align items to the top */
+}
+
+/* Style for each contact info block */
+.contact-item 
+{
+  padding-left: 16px; /* Space before text */
+  border-left: 3px solid var(--red); /* Red line on the left */
+}
+
+/* Bold labels inside contact items */
+.contact-item b 
+{
+  color: var(--ink); /* Use theme ink color */
+}
+
+/* Styling for the embedded map */
+.map 
+{
+  margin-top: 30px; /* Space above map */
+  box-shadow: 0 8px 20px #00000012; /* Soft shadow around map */
+}
+
+/* Contact form container */
+#contact-form 
+{
+  box-shadow: 0 10px 28px #0000000b; /* Light shadow for card effect */
+}
+
+/* Labels inside the contact form */
+#contact-form label 
+{
+  display: block; /* Stack labels vertically */
+  color: var(--ink); /* Consistent text color */
+}

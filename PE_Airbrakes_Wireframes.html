@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PE Airbrakes Wireframes | Tech Titans</title>
+<style>
+:root{--ink:oklch(24% .025 250);--muted:oklch(52% .025 250);--paper:oklch(98% .012 250);--surface:oklch(100% .008 250);--line:oklch(88% .025 250);--blue:oklch(48% .15 250);--blue-soft:oklch(94% .035 250);--green:oklch(48% .12 145);--amber:oklch(60% .13 75);--red:oklch(54% .16 25);--r:18px}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}header{padding:64px 6vw 48px;background:var(--blue);color:oklch(98% .01 250)}header .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;opacity:.8}h1{font-size:clamp(2rem,5vw,4rem);line-height:1.05;margin:14px 0 12px;text-wrap:balance}header p{max-width:64ch;color:oklch(92% .02 250);margin:0}.wrap{max-width:1180px;margin:auto;padding:40px 6vw 80px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:42px 0 20px}.section-head h2{font-size:1.55rem;margin:0}.section-head p{margin:0;color:var(--muted);font-size:.94rem;max-width:54ch}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}.frame{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:0 10px 26px oklch(25% .03 250 / .08)}.frame h3{font-size:1rem;margin:0 0 12px}.caption{font-size:.84rem;color:var(--muted);margin-top:10px}.desktop{aspect-ratio:16/10;border:1px solid oklch(35% .02 250);border-radius:8px;overflow:hidden;background:var(--surface)}.browser{height:100%;position:relative;padding-top:14%;background:var(--surface)}.browser:before{content:"●  ●  ●     www.peairbrakes.co.za";position:absolute;inset:0 0 auto;height:14%;padding:7px 12px;background:oklch(94% .01 250);font-size:9px;color:var(--muted)}.nav{height:12%;background:var(--blue);color:white;padding:7px 12px;font-size:10px;font-weight:700}.nav span{float:right;font-weight:500;font-size:8px}.desk-content{padding:12px}.hero{height:26%;background:var(--blue-soft);border:1px solid var(--line);display:grid;place-items:center;font-size:11px;color:var(--blue);font-weight:700}.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.mini{height:46px;border:1px solid var(--line);display:grid;place-items:center;text-align:center;font-size:8px;color:var(--muted)}.btn{display:inline-block;background:var(--blue);color:white;border-radius:999px;padding:6px 12px;font-size:8px;font-weight:700;margin-top:10px}.form{padding:18px}.form h4{margin:0 0 12px;font-size:12px}.input{height:20px;border:1px solid var(--line);margin:7px 0;background:oklch(99% .005 250);font-size:8px;color:var(--muted);padding:4px 6px}.mobile{max-width:220px;margin:auto;aspect-ratio:9/18;border:7px solid oklch(22% .02 250);border-radius:28px;background:var(--surface);padding:24px 10px 10px;position:relative;overflow:hidden}.mobile:before{content:"9:41  •••";position:absolute;top:8px;left:14px;right:14px;font-size:7px;color:var(--muted);display:flex;justify-content:space-between}.mhead{background:var(--blue);color:white;padding:8px;border-radius:8px;font-size:10px;text-align:center;font-weight:700}.mcopy{font-size:9px;margin:14px 2px 8px;font-weight:700}.mhelp{font-size:8px;color:var(--muted);margin:3px 2px 10px}.mrow{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.mitem{height:48px;border:1px solid var(--line);border-radius:8px;background:var(--blue-soft);display:grid;place-items:center;text-align:center;font-size:7px;color:var(--blue)}.mfield{height:24px;border:1px solid var(--line);margin:7px 0;padding:6px;font-size:7px;color:var(--muted)}.mcard{border:1px solid var(--line);border-radius:8px;padding:8px;font-size:8px;margin:8px 0}.danger{background:var(--red);color:white;border-radius:8px;padding:8px;text-align:center;font-size:8px;font-weight:700}.success{background:var(--green);color:white;border-radius:8px;padding:8px;text-align:center;font-size:8px;font-weight:700}.settings div{border:1px solid var(--line);padding:8px;margin:6px 0;border-radius:7px;font-size:8px}.settings .out{background:var(--red);color:white;text-align:center;font-weight:700}.note{margin-top:44px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--blue-soft);color:var(--ink)}@media(max-width:640px){header{padding-top:40px}.wrap{padding-top:24px}.section-head{display:block}.section-head p{margin-top:6px}.desktop{min-height:210px}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">Tech Titans · XISD6329/w</div><h1>PE Airbrakes wireframe pack</h1><p>Website and Android mobile application screens for the digital breakdown management system. Each screen is separated below for review and inclusion in the Task 1 report.</p></header>
+<main class="wrap">
+<section><div class="section-head"><h2>Website wireframes</h2><p>Responsive public-facing pages for service discovery, bookings, quotes, and secure customer access.</p></div><div class="gallery">
+<article class="frame"><h3>01 · Home page</h3><div class="desktop"><div class="browser"><div class="nav">PE AIRBRAKES <span>Home · Services · Bookings · Quotes · Contact · Login</span></div><div class="desk-content"><div class="hero">24/7 breakdown service hero banner</div><div class="cols"><div class="mini">Breakdown<br>Repair</div><div class="mini">Fleet<br>Maintenance</div><div class="mini">Parts<br>Supply</div></div><div class="btn">Request a quote</div></div></div></div><div class="caption">Clear entry point, services overview, and conversion CTA.</div></article>
+<article class="frame"><h3>02 · Book a service</h3><div class="desktop"><div class="browser"><div class="nav">PE AIRBRAKES <span>Bookings</span></div><div class="form"><h4>Schedule your service appointment</h4><div class="input">Full name</div><div class="input">Phone number</div><div class="input">Vehicle registration</div><div class="input">Service type</div><div class="input">Preferred date</div><div class="input" style="height:34px">Describe the issue...</div><div class="btn">Submit booking</div></div></div></div><div class="caption">Compact form flow with vehicle and issue details captured early.</div></article>
+<article class="frame"><h3>03 · Login / register</h3><div class="desktop"><div class="browser"><div class="nav">PE AIRBRAKES <span>Secure access</span></div><div class="form" style="max-width:70%;margin:auto"><h4>Sign in to your account</h4><div class="input">Email address</div><div class="input">Password</div><div class="btn">Sign in</div><div style="text-align:center;font-size:8px;color:var(--muted);margin:10px">or</div><div class="btn" style="background:var(--red)">Sign in with Google (SSO)</div></div></div></div><div class="caption">Authentication supports standard credentials and SSO.</div></article>
+</div></section>
+<section><div class="section-head"><h2>Mobile app wireframes</h2><p>Role-aware Android screens for customers and technicians, with secure access, breakdown capture, job cards, and settings.</p></div><div class="gallery">
+<article class="frame"><h3>04 · Login / SSO</h3><div class="mobile"><div class="mhead">PE Airbrakes</div><div class="mcopy" style="text-align:center">Welcome back</div><div class="mhelp" style="text-align:center">Sign in to continue</div><div class="mfield">Email</div><div class="mfield">Password</div><div class="btn" style="display:block;text-align:center">Sign in</div><div class="mhelp" style="text-align:center">or</div><div class="danger" style="background:var(--red)">Sign in with Google</div><div class="mhelp" style="text-align:center;color:var(--blue)">Register a new account</div></div><div class="caption">Credential login plus third-party SSO.</div></article>
+<article class="frame"><h3>05 · Customer dashboard</h3><div class="mobile"><div class="mhead">Dashboard</div><div class="mcopy">Hello, Customer</div><div class="mhelp">What do you need help with?</div><div class="mrow"><div class="mitem">Breakdown</div><div class="mitem">Booking</div><div class="mitem">Quotes</div></div><div class="mcopy">Active jobs</div><div class="mcard">Breakdown #1024<br><span style="color:var(--muted)">Technician: J. Visser<br>Status: In progress</span></div><div class="danger">Report new breakdown</div></div><div class="caption">High-priority action stays visible without crowding the screen.</div></article>
+<article class="frame"><h3>06 · Log breakdown</h3><div class="mobile"><div class="mhead">Log breakdown</div><div class="mcopy">Report a breakdown</div><div class="mfield">Vehicle registration</div><div class="mfield" style="height:42px">Problem description</div><div class="mcopy">Location</div><div class="mcard" style="background:var(--blue-soft);color:var(--blue)">Share current location<br><span style="font-size:7px">GPS captured</span></div><div class="mcard">Add photo</div><div class="danger">Submit breakdown report</div></div><div class="caption">Guided capture for vehicle, issue, location, and evidence.</div></article>
+<article class="frame"><h3>07 · Technician job card</h3><div class="mobile"><div class="mhead">Job card</div><div class="mcopy">Job #1024</div><div class="mcard">Customer: ABC Logistics<br>Vehicle: CA 123-456<br>Location: N2 Highway, PE</div><div class="mfield">Time spent (hours)</div><div class="mfield">Kilometres travelled</div><div class="mcard">+ Add part<br><span style="color:var(--muted)">Brake pad x2, air hose x1</span></div><div class="mfield">Additional notes</div><div class="success">Complete job card</div></div><div class="caption">Technician-first job completion flow with measurable service data.</div></article>
+<article class="frame"><h3>08 · Settings</h3><div class="mobile"><div class="mhead">Settings</div><div class="mcopy">Account and preferences</div><div class="settings"><div>Edit profile</div><div>Notification preferences</div><div>Language</div><div>Change password</div><div>About / help</div><div>Terms and privacy</div><div class="out">Sign out</div></div></div><div class="caption">Settings are relevant to the application and easy to scan.</div></article>
+</div></section>
+<div class="note"><strong>Review note:</strong> These are presentation-ready concept wireframes. Replace them with the final Figma or Justinmind exports before submission if your lecturer requires high-fidelity evidence.</div>
+</main>
+</body>
+</html>

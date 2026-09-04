@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Design-ui pages are single compositions, so the whole body is editable.
+    function markEditable() {
+        document.body.classList.add('artifact-editable');
+    }
+
+    // Credit badge with idle-fade. Hover devices only.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+
+    function init() {
+        markEditable();
+        initChromeUI();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PE Airbrakes Clickable Prototype</title>
+<style>
+:root{--ink:oklch(24% .025 250);--muted:oklch(52% .025 250);--paper:oklch(97% .012 250);--surface:oklch(100% .008 250);--line:oklch(88% .025 250);--blue:oklch(48% .15 250);--blue-soft:oklch(94% .035 250);--green:oklch(48% .12 145);--red:oklch(54% .16 25);--amber:oklch(60% .13 75);--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}.topbar{background:var(--blue);color:oklch(98% .01 250);padding:18px 5vw;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;letter-spacing:.08em;font-size:.88rem}.topbar small{opacity:.8}.shell{max-width:1240px;margin:auto;padding:30px 5vw 72px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}.toolbar h1{margin:0;font-size:clamp(1.65rem,3vw,2.5rem);line-height:1.1}.toolbar p{margin:5px 0 0;color:var(--muted);max-width:60ch}.switcher{display:flex;gap:8px;flex-wrap:wrap}.pill,.nav-btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:10px 15px;font-size:.86rem;font-weight:700}.pill.active,.nav-btn.active{background:var(--blue);color:white;border-color:var(--blue)}.flow{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 24px}.flow button{border:0;background:transparent;color:var(--muted);font-size:.84rem;padding:6px 0}.flow button:not(:last-child):after{content:'→';margin-left:8px;color:var(--line)}.flow button.active{color:var(--blue);font-weight:800}.screen{display:none;animation:enter .32s var(--ease)}.screen.active{display:block}@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.site{border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden;box-shadow:0 12px 30px oklch(25% .03 250 / .08)}.browserbar{background:oklch(94% .01 250);padding:10px 16px;color:var(--muted);font-size:.76rem}.site-nav{background:var(--blue);color:white;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.site-nav strong{letter-spacing:.06em}.site-links{display:flex;gap:16px;flex-wrap:wrap}.site-links button{background:none;border:0;color:white;font-size:.82rem;padding:4px}.site-content{padding:34px;min-height:460px}.hero{background:var(--blue-soft);border:1px solid oklch(86% .045 250);padding:42px 24px;border-radius:14px;text-align:center}.hero h2{font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.05;margin:0 auto 12px;max-width:18ch}.hero p{color:var(--muted);margin:0 auto 22px;max-width:55ch}.cta{border:0;border-radius:999px;background:var(--blue);color:white;padding:12px 18px;font-weight:800;transition:transform .18s var(--ease),filter .18s}.cta:hover{transform:translateY(-2px);filter:brightness(1.08)}.cta.red{background:var(--red)}.cta.green{background:var(--green)}.service-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}.service{border:1px solid var(--line);padding:20px;border-radius:12px}.service h3{margin:0 0 6px}.service p{margin:0;color:var(--muted);font-size:.9rem}.form-wrap{max-width:720px;margin:auto}.form-wrap h2{margin-top:0;font-size:2rem}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-weight:700;font-size:.86rem}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:9px;padding:12px;background:oklch(99% .006 250);color:var(--ink);font:inherit}.field textarea{min-height:100px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{outline:3px solid oklch(80% .1 250);border-color:var(--blue)}.form-actions{display:flex;gap:10px;align-items:center;margin-top:18px}.notice{padding:12px 14px;border-radius:10px;background:oklch(94% .08 145);color:oklch(30% .07 145);font-size:.9rem;margin-top:16px}.mobile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}.phone{background:var(--surface);border:7px solid oklch(22% .02 250);border-radius:30px;padding:28px 12px 14px;max-width:260px;min-height:500px;margin:auto;position:relative;box-shadow:0 12px 25px oklch(25% .03 250 / .1)}.phone:before{content:'9:41  •••';position:absolute;top:8px;left:16px;right:16px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}.phone-head{background:var(--blue);color:white;padding:11px 8px;border-radius:9px;text-align:center;font-weight:800;font-size:.9rem}.phone h3{font-size:1.2rem;margin:22px 0 5px}.phone p{font-size:.84rem;color:var(--muted);margin:4px 0 13px}.phone .field input,.phone .field textarea{font-size:.82rem;padding:10px}.phone .cta{width:100%;font-size:.82rem;margin-top:10px}.phone-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:16px 0}.phone-tile{min-height:62px;border:1px solid var(--line);background:var(--blue-soft);border-radius:9px;display:grid;place-items:center;text-align:center;color:var(--blue);font-weight:800;font-size:.72rem;padding:5px}.job,.settings-item{border:1px solid var(--line);border-radius:9px;padding:10px;margin:9px 0;font-size:.82rem}.job strong{display:block}.status{color:var(--green);font-weight:800}.settings-item{background:var(--surface);cursor:pointer}.settings-item:hover{background:var(--blue-soft)}.toast{position:fixed;right:20px;bottom:20px;max-width:330px;background:var(--ink);color:white;padding:13px 16px;border-radius:12px;box-shadow:0 12px 24px oklch(20% .03 250 / .2);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .22s var(--ease),transform .22s var(--ease);z-index:4}.toast.show{opacity:1;transform:none}.legend{margin-top:24px;color:var(--muted);font-size:.86rem}.hidden{display:none!important}@media(max-width:760px){.toolbar{display:block}.switcher{margin-top:16px}.site-content{padding:20px}.site-links{gap:6px}.service-row,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.phone{max-width:340px}.mobile-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="brand">PE AIRBRAKES</div><small>Tech Titans · clickable prototype</small></div>
+<main class="shell">
+<div class="toolbar"><div><h1>Prototype interactions</h1><p>Click through every wireframe flow. Website navigation, booking submission, login and SSO, customer breakdown capture, technician job completion, and settings are wired together.</p></div><div class="switcher" aria-label="Prototype mode"><button class="pill active" data-mode="website">Website</button><button class="pill" data-mode="mobile">Mobile app</button></div></div>
+<div class="flow" id="flow"></div>
+<section id="website" class="mode active">
+<div class="site">
+<div class="browserbar">● ● ● &nbsp;&nbsp; prototype.peairbrakes.co.za</div>
+<nav class="site-nav"><strong>PE AIRBRAKES</strong><div class="site-links"><button data-go="home">Home</button><button data-go="booking">Bookings</button><button data-go="login">Login</button></div></nav>
+<div class="site-content">
+<div class="screen active" data-screen="home"><div class="hero"><h2>Breakdown help, without the paperwork.</h2><p>Report a problem, request a quote, and keep every service update in one place.</p><button class="cta" data-go="booking">Request a quote</button></div><div class="service-row"><div class="service"><h3>Breakdown repair</h3><p>Fast response for roadside and workshop repairs.</p></div><div class="service"><h3>Fleet maintenance</h3><p>Structured service records for operational teams.</p></div><div class="service"><h3>Parts supply</h3><p>Track parts used against each completed job.</p></div></div></div>
+<div class="screen" data-screen="booking"><div class="form-wrap"><h2>Book a service</h2><p>Capture the details the team needs to respond quickly.</p><form id="bookingForm"><div class="form-grid"><div class="field"><label for="name">Full name</label><input id="name" required placeholder="Your name"></div><div class="field"><label for="phone">Phone number</label><input id="phone" required placeholder="+27 ..."></div><div class="field"><label for="reg">Vehicle registration</label><input id="reg" required placeholder="CA 123-456"></div><div class="field"><label for="service">Service type</label><select id="service"><option>Breakdown repair</option><option>Fleet maintenance</option><option>Parts supply</option></select></div><div class="field"><label for="date">Preferred date</label><input id="date" type="date" required></div><div class="field full"><label for="issue">Describe the issue</label><textarea id="issue" required placeholder="What happened?"></textarea></div></div><div class="form-actions"><button class="cta" type="submit">Submit booking</button><button class="pill" type="button" data-go="home">Cancel</button></div><div id="bookingNotice" class="notice hidden">Booking captured. The service team will follow up shortly.</div></form></div></div>
+<div class="screen" data-screen="login"><div class="form-wrap"><h2>Sign in</h2><p>Use your PE Airbrakes account or continue with SSO.</p><form id="loginForm"><div class="field"><label for="email">Email address</label><input id="email" type="email" required placeholder="email@example.com"></div><div class="field" style="margin-top:16px"><label for="password">Password</label><input id="password" type="password" required minlength="6" placeholder="At least 6 characters"></div><div class="form-actions"><button class="cta" type="submit">Sign in</button><button class="cta red" type="button" id="ssoBtn">Google SSO</button></div><div id="loginNotice" class="notice hidden">Signed in successfully. Customer dashboard is ready.</div></form></div></div>
+</div></div>
+</section>
+<section id="mobile" class="mode hidden">
+<div class="mobile-grid">
+<div class="screen active" data-mscreen="mobile-login"><div class="phone"><div class="phone-head">PE Airbrakes</div><h3>Welcome back</h3><p>Sign in to continue.</p><form id="mobileLoginForm"><div class="field"><label for="memail">Email</label><input id="memail" type="email" required placeholder="email@example.com"></div><div class="field" style="margin-top:10px"><label for="mpass">Password</label><input id="mpass" type="password" required minlength="6" placeholder="••••••••"></div><button class="cta" type="submit">Sign in</button><button class="cta red" type="button" id="mobileSso" style="margin-top:8px">Google SSO</button><button class="pill" type="button" id="registerBtn" style="width:100%;margin-top:10px">Register</button></form></div></div>
+<div class="screen" data-mscreen="dashboard"><div class="phone"><div class="phone-head">Dashboard</div><h3>Hello, Customer</h3><p>What do you need help with?</p><div class="phone-row"><button class="phone-tile" data-mgo="breakdown">Breakdown</button><button class="phone-tile" data-mgo="booking">Booking</button><button class="phone-tile" data-mgo="settings">Settings</button></div><h3>Active jobs</h3><div class="job"><strong>Breakdown #1024</strong><span>Technician: J. Visser</span><br><span class="status">In progress</span></div><button class="cta red" data-mgo="breakdown">Report breakdown</button></div></div>
+<div class="screen" data-mscreen="breakdown"><div class="phone"><div class="phone-head">Log breakdown</div><h3>Report a breakdown</h3><form id="breakdownForm"><div class="field"><label for="vehicle">Vehicle registration</label><input id="vehicle" required placeholder="CA 123-456"></div><div class="field" style="margin-top:10px"><label for="problem">Problem description</label><textarea id="problem" required placeholder="Describe the issue"></textarea></div><button class="pill" type="button" id="locationBtn" style="width:100%;margin-top:10px">Share current location</button><p id="locationText">Location not captured</p><button class="pill" type="button" id="photoBtn" style="width:100%">Add photo</button><button class="cta red" type="submit">Submit report</button><div id="breakdownNotice" class="notice hidden">Breakdown reported. A technician will be assigned.</div></form></div></div>
+<div class="screen" data-mscreen="booking"><div class="phone"><div class="phone-head">My booking</div><h3>Request received</h3><p>Your service request is queued for review.</p><div class="job"><strong>Booking #2048</strong><span>Breakdown repair</span><br><span class="status">Awaiting confirmation</span></div><button class="cta" data-mgo="dashboard">Back to dashboard</button></div></div>
+<div class="screen" data-mscreen="settings"><div class="phone"><div class="phone-head">Settings</div><h3>Account and preferences</h3><div class="settings-item">Edit profile</div><div class="settings-item" id="notifSetting">Notification preferences</div><div class="settings-item">Language</div><div class="settings-item">Change password</div><div class="settings-item">About / help</div><button class="cta red" id="signoutBtn">Sign out</button></div></div>
+<div class="screen" data-mscreen="technician"><div class="phone"><div class="phone-head">Job card</div><h3>Job #1024</h3><div class="job"><strong>ABC Logistics</strong><span>Vehicle: CA 123-456</span><br><span>N2 Highway, PE</span></div><form id="jobForm"><div class="field"><label for="hours">Time spent</label><input id="hours" type="number" min="0" required placeholder="Hours"></div><div class="field" style="margin-top:10px"><label for="km">Kilometres travelled</label><input id="km" type="number" min="0" required placeholder="Kilometres"></div><button class="pill" type="button" id="partsBtn" style="width:100%;margin-top:10px">Add part</button><button class="cta green" type="submit">Complete job card</button><div id="jobNotice" class="notice hidden">Job card completed and sent to the office.</div></form></div></div>
+</div>
+</section>
+<p class="legend">Prototype behavior: use the top switcher to move between the website and mobile app, then follow the highlighted flow buttons. Forms validate required fields and show success states.</p>
+</main><div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+const toastEl=document.getElementById('toast');let toastTimer;
+function toast(msg){toastEl.textContent=msg;toastEl.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toastEl.classList.remove('show'),2600)}
+const websiteScreens=[['home','Home'],['booking','Bookings'],['login','Login']];const mobileScreens=[['mobile-login','Login'],['dashboard','Dashboard'],['breakdown','Breakdown'],['booking','Booking'],['technician','Job card'],['settings','Settings']];
+function renderFlow(mode){const flow=document.getElementById('flow');const items=mode==='website'?websiteScreens:mobileScreens;flow.innerHTML=items.map(([id,label],i)=>`<button class="${i===0?'active':''}" data-flow="${id}">${label}</button>`).join('');flow.querySelectorAll('[data-flow]').forEach(b=>b.onclick=()=>go(mode,b.dataset.flow));}
+function go(mode,id){if(mode==='website'){document.querySelectorAll('#website .screen').forEach(s=>s.classList.toggle('active',s.dataset.screen===id));document.querySelectorAll('#flow button').forEach(b=>b.classList.toggle('active',b.dataset.flow===id));}else{document.querySelectorAll('#mobile .screen').forEach(s=>s.classList.toggle('active',s.dataset.mscreen===id));document.querySelectorAll('#flow button').forEach(b=>b.classList.toggle('active',b.dataset.flow===id));}}
+function modeSwitch(mode){document.querySelectorAll('.mode').forEach(m=>m.classList.toggle('hidden',m.id!==mode));document.querySelectorAll('.pill[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));renderFlow(mode);}
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>modeSwitch(b.dataset.mode));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go('website',b.dataset.go));document.querySelectorAll('[data-mgo]').forEach(b=>b.onclick=()=>go('mobile',b.dataset.mgo));
+document.getElementById('bookingForm').onsubmit=e=>{e.preventDefault();document.getElementById('bookingNotice').classList.remove('hidden');toast('Booking submitted');};
+document.getElementById('loginForm').onsubmit=e=>{e.preventDefault();document.getElementById('loginNotice').classList.remove('hidden');toast('Signed in');};document.getElementById('ssoBtn').onclick=()=>{document.getElementById('loginNotice').classList.remove('hidden');toast('Google SSO connected');};
+document.getElementById('mobileLoginForm').onsubmit=e=>{e.preventDefault();go('mobile','dashboard');toast('Signed in to mobile app');};document.getElementById('mobileSso').onclick=()=>{go('mobile','dashboard');toast('Google SSO connected');};document.getElementById('registerBtn').onclick=()=>toast('Registration flow opened');
+document.getElementById('locationBtn').onclick=()=>{document.getElementById('locationText').textContent='Location captured: N2 Highway, Port Elizabeth';toast('Location shared');};document.getElementById('photoBtn').onclick=()=>toast('Photo picker opened');document.getElementById('breakdownForm').onsubmit=e=>{e.preventDefault();document.getElementById('breakdownNotice').classList.remove('hidden');toast('Breakdown reported');};
+document.getElementById('partsBtn').onclick=()=>toast('Parts selector opened');document.getElementById('jobForm').onsubmit=e=>{e.preventDefault();document.getElementById('jobNotice').classList.remove('hidden');toast('Job card completed');};document.getElementById('notifSetting').onclick=()=>toast('Notification preferences opened');document.getElementById('signoutBtn').onclick=()=>{go('mobile','mobile-login');toast('Signed out');};
+renderFlow('website');
+</script>
+</body></html>

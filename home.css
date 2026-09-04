@@ -1,0 +1,32 @@
+.hero-copy {
+  animation: home-reveal 700ms ease both;
+}
+.hero-copy h1 {
+  max-width: 680px;
+}
+.cards article {
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+
+.cards article:hover {
+  border-color: var(--red);
+  box-shadow: 0 12px 28px #00000012;
+  transform: translateY(-4px);
+}
+
+
+@keyframes home-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+          to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

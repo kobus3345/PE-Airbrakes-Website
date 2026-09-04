@@ -1,0 +1,19 @@
+.service-list article {
+  overflow: hidden;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.service-list article:hover {
+  border-color: var(--red);
+  box-shadow: 0 10px 24px #00000010;
+}
+.service-list h2 {
+  letter-spacing: 0.01em;
+}
+.service-list ul {
+  line-height: 1.8;
+}
+.banner {
+  border-radius: 3px;
+}

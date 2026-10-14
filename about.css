@@ -1,0 +1,14 @@
+.page > .split {
+  margin: 35px 0 0;
+}
+.page > .split > img {
+  border-radius: 4px;
+  box-shadow: 14px 14px 0 var(--red);
+}
+.values article {
+  border: 0;
+  border-top: 4px solid var(--red);
+}
+.values article b {
+  border-radius: 50%;
+}

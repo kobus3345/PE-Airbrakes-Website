@@ -1,0 +1,14 @@
+.narrow {
+  padding-top: 70px;
+}
+#book-form {
+  border-top: 4px solid var(--red);
+  box-shadow: 0 10px 28px #0000000b;
+}
+#book-form h2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+#book-form .button {
+  margin-top: 16px;
+}

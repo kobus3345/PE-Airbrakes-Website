@@ -9,7 +9,12 @@
   color: var(--ink);
 }
 .map {
+  display: block;
+  width: 100%;
+  height: 350px;
+  border: 0;
   margin-top: 30px;
+  border-radius: 10px;
   box-shadow: 0 8px 20px #00000012;
 }
 #contact-form {
@@ -18,4 +23,64 @@
 #contact-form label {
   display: block;
   color: var(--ink);
+}
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: normal;
+  white-space: nowrap;
+  z-index: 100;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip:focus-visible .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Input example placeholders */
+.form-card input::placeholder,
+.form-card textarea::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Validation error messages */
+.field-error {
+  display: block;
+  color: #d93025;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+/* Hide empty error messages */
+.field-error:empty {
+  display: none;
+}
+
+/* Invalid input borders */
+.form-card input.invalid,
+.form-card textarea.invalid {
+  border: 1px solid #d93025 !important;
+  outline: none;
 }

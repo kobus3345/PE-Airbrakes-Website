@@ -32,8 +32,21 @@
           ><a href="contact.html">Contact</a>
         </nav>
         <div class="actions">
-          <a class="outline button" href="quote.html">Get a Quote</a
-          ><a class="button" href="book.html">Book a Vehicle</a>
+          <a class="button tooltip" href="quote.html">
+            <span class="quote-icon"></span>
+            Get a Quote
+            <span class="tooltip-text">
+              Request a price estimate for our truck brake services.
+            </span>
+          </a>
+
+          <a class="button tooltip" href="book.html">
+            <span class="calendar-icon"></span>
+            Book your Vehicle
+            <span class="tooltip-text">
+              Schedule your truck for a brake inspection or repair.
+            </span>
+          </a>
         </div>
         <button class="menu">☰</button>
       </div>
@@ -50,6 +63,7 @@
               const links = document.querySelector(".mobile-links");
               menu.addEventListener("click", () => links.classList.toggle("open"));
             </script>
+        <section class="hero">
         <div class="container hero-copy">
           <p class="eyebrow">Port Elizabeth's #1 Brake Specialists</p>
           <h1>Keeping Your <span>Fleet Safe</span> on Every Road.</h1>

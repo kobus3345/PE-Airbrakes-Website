@@ -601,3 +601,60 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Quote document icon */
+.quote-icon {
+  width: 11px;
+  height: 13px;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  margin-right: 6px;
+  box-sizing: border-box;
+  vertical-align: -2px;
+}
+
+.quote-icon::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 3px;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  left: 2px;
+  top: 4px;
+}
+
+/* Calendar icon */
+.calendar-icon {
+  width: 13px;
+  height: 12px;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  margin-right: 6px;
+  box-sizing: border-box;
+  vertical-align: -2px;
+}
+
+.calendar-icon::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  border-top: 1.5px solid currentColor;
+}
+
+.calendar-icon::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  border-left: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+}

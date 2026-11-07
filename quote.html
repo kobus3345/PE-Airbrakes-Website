@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -41,7 +42,7 @@
           <span class="quote-icon"></span>
           Get a Quote
           <span class="tooltip-text">
-            Request a price estimate for our truck brake services.
+            Request an estimated cost for the selected vehicle service by providing your contact details and describing the issue.
           </span>
         </a>
 
@@ -79,7 +80,6 @@
       <h2>Contact Information</h2>
 
       <div class="form-grid">
-
         <label>
           Full Name
           <input
@@ -129,7 +129,6 @@
 
         <label>
           Truck / Vehicle Type
-
           <select name="vehicleType" id="vehicleType" required>
             <option value="">Select type...</option>
             <option value="Rigid Truck">Rigid Truck</option>
@@ -146,7 +145,6 @@
 
         <label>
           Nature of Issue
-
           <select name="service" id="service" required>
             <option value="">Select service...</option>
             <option value="Air Brake System Repair">Air Brake System Repair</option>
@@ -171,7 +169,6 @@
           ></textarea>
           <small class="field-error" id="message-error"></small>
         </label>
-
       </div>
 
       <button class="button" type="submit">Submit Quote Request</button>
@@ -185,7 +182,6 @@
   </footer>
 
   <script>
-    // Mobile navigation
     const menu = document.querySelector(".menu");
     const links = document.querySelector(".mobile-links");
 
@@ -193,7 +189,6 @@
       links.classList.toggle("open");
     });
 
-    // Form elements
     const form = document.querySelector("#quote-form");
 
     const vehicleType = document.querySelector("#vehicleType");
@@ -202,7 +197,6 @@
     const vehicleDescription = document.querySelector("#vehicle-description");
     const serviceDescription = document.querySelector("#service-description");
 
-    // Vehicle type descriptions
     const vehicleDescriptions = {
       "Rigid Truck":
         "A rigid truck has its cab and load-carrying body mounted on one chassis. It is commonly used to transport goods and materials.",
@@ -217,7 +211,6 @@
         "Choose this option for a heavy vehicle that does not fit into the other categories. Please provide more details about the vehicle below."
     };
 
-    // Service descriptions
     const serviceDescriptions = {
       "Air Brake System Repair":
         "Inspection, diagnosis and repair of compressed-air braking systems, including air leaks, valves, pipes and other brake components.",
@@ -232,7 +225,6 @@
         "A general brake-system inspection to identify faults, worn components and potential safety concerns."
     };
 
-    // Update vehicle description
     vehicleType.addEventListener("change", () => {
       vehicleDescription.textContent =
         vehicleDescriptions[vehicleType.value] ||
@@ -241,7 +233,6 @@
       clearError("vehicleType");
     });
 
-    // Update service description
     service.addEventListener("change", () => {
       serviceDescription.textContent =
         serviceDescriptions[service.value] ||
@@ -250,7 +241,6 @@
       clearError("service");
     });
 
-    // Show validation error
     function showError(field, message) {
       const input = form.elements[field];
       const error = document.getElementById(field + "-error");
@@ -265,7 +255,6 @@
       }
     }
 
-    // Clear validation error
     function clearError(field) {
       const input = form.elements[field];
       const error = document.getElementById(field + "-error");
@@ -280,25 +269,21 @@
       }
     }
 
-    // South African phone number format validation
     function validateSouthAfricanPhone(phone) {
       const cleaned = phone.replace(/[\s()-]/g, "");
 
       return /^(?:0[1-8]\d{8}|\+27[1-8]\d{8})$/.test(cleaned);
     }
 
-    // Email validation
     function validateEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
     }
 
-    // Full name validation
     function validateName(name) {
       return name.length >= 2 &&
         /^[\p{L}\s'-]+$/u.test(name);
     }
 
-    // Validate form
     function validateForm() {
       let valid = true;
 
@@ -312,7 +297,6 @@
       const selectedService = data.get("service");
       const message = data.get("message").trim();
 
-      // Clear previous errors
       [
         "name",
         "company",
@@ -323,7 +307,6 @@
         "message"
       ].forEach(clearError);
 
-      // Name validation
       if (!name) {
         showError("name", "Please enter your full name.");
         valid = false;
@@ -332,13 +315,11 @@
         valid = false;
       }
 
-      // Company validation (optional)
       if (company.length > 100) {
         showError("company", "Company name cannot exceed 100 characters.");
         valid = false;
       }
 
-      // Phone validation
       if (!phone) {
         showError("phone", "Please enter your phone number.");
         valid = false;
@@ -350,7 +331,6 @@
         valid = false;
       }
 
-      // Email validation
       if (!email) {
         showError("email", "Please enter your email address.");
         valid = false;
@@ -359,19 +339,16 @@
         valid = false;
       }
 
-      // Vehicle validation
       if (!selectedVehicle) {
         showError("vehicleType", "Please select your vehicle type.");
         valid = false;
       }
 
-      // Service validation
       if (!selectedService) {
         showError("service", "Please select the service you require.");
         valid = false;
       }
 
-      // Additional details validation
       if (message.length > 1000) {
         showError("message", "Additional details cannot exceed 1000 characters.");
         valid = false;
@@ -380,12 +357,10 @@
       return valid;
     }
 
-    // Clear errors while the user edits the form
     ["name", "company", "phone", "email", "message"].forEach(field => {
       form.elements[field].addEventListener("input", () => clearError(field));
     });
 
-    // Form submission
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
@@ -398,7 +373,6 @@
       const data = new FormData(form);
       const name = data.get("name").trim();
 
-      // Replace form with success message
       const success = document.createElement("div");
       success.className = "success";
 

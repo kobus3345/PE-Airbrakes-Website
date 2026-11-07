@@ -28,14 +28,12 @@
           <small>TRUCK BRAKE SPECIALISTS</small>
         </span>
       </a>
-
       <nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="about.html">About Us</a>
         <a class="active" href="contact.html">Contact</a>
       </nav>
-
       <div class="actions">
         <a class="button tooltip" href="quote.html">
           <span class="quote-icon"></span>
@@ -44,7 +42,6 @@
             Request a price estimate for our truck brake services.
           </span>
         </a>
-
         <a class="button tooltip" href="book.html">
           <span class="calendar-icon"></span>
           Book your Vehicle
@@ -53,7 +50,6 @@
           </span>
         </a>
       </div>
-
       <button class="menu" type="button" aria-label="Open navigation menu">☰</button>
     </div>
 
@@ -170,7 +166,7 @@
   </footer>
 
   <script>
-    // Mobile navigation
+    
     const menu = document.querySelector(".menu");
     const links = document.querySelector(".mobile-links");
 
@@ -178,10 +174,10 @@
       links.classList.toggle("open");
     });
 
-    // Contact form
+   
     const form = document.querySelector("#contact-form");
 
-    // Show validation error
+    
     function showError(field, message) {
       const input = form.elements[field];
       const error = document.getElementById(field + "-error");
@@ -211,25 +207,25 @@
       }
     }
 
-    // South African phone number validation
+    
     function validateSouthAfricanPhone(phone) {
       const cleaned = phone.replace(/[\s()-]/g, "");
 
       return /^(?:0[1-8]\d{8}|\+27[1-8]\d{8})$/.test(cleaned);
     }
 
-    // Email validation
+    
     function validateEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
     }
 
-    // Full name validation
+    
     function validateName(name) {
       return name.length >= 2 &&
         /^[\p{L}\s'-]+$/u.test(name);
     }
 
-    // Validate contact form
+   
     function validateForm() {
       let valid = true;
 
@@ -240,10 +236,10 @@
       const email = data.get("email").trim();
       const message = data.get("message").trim();
 
-      // Clear previous errors
+      
       ["name", "phone", "email", "message"].forEach(clearError);
 
-      // Name validation
+      
       if (!name) {
         showError("name", "Please enter your full name.");
         valid = false;
@@ -255,7 +251,7 @@
         valid = false;
       }
 
-      // Phone validation
+      
       if (!phone) {
         showError("phone", "Please enter your phone number.");
         valid = false;
@@ -267,7 +263,7 @@
         valid = false;
       }
 
-      // Email validation
+      
       if (!email) {
         showError("email", "Please enter your email address.");
         valid = false;
@@ -276,7 +272,7 @@
         valid = false;
       }
 
-      // Message validation
+      
       if (!message) {
         showError("message", "Please enter your message.");
         valid = false;
@@ -297,14 +293,14 @@
       return valid;
     }
 
-    // Clear errors while typing
+    
     ["name", "phone", "email", "message"].forEach(field => {
       form.elements[field].addEventListener("input", () => {
         clearError(field);
       });
     });
 
-    // Send message form submission
+    
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
@@ -314,7 +310,7 @@
         return;
       }
 
-      // Show success message
+      
       const success = document.createElement("div");
       success.className = "success";
 

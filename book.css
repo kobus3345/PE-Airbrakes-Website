@@ -44,7 +44,6 @@
   opacity: 1;
 }
 
-/* Field descriptions */
 .field-description {
   display: block;
   margin-top: 6px;
@@ -55,14 +54,12 @@
   min-height: 38px;
 }
 
-/* Input example placeholders */
 .form-card input::placeholder,
 .form-card textarea::placeholder {
   color: #999;
   opacity: 1;
 }
 
-/* Validation error messages */
 .field-error {
   display: block;
   color: #d93025;
@@ -72,12 +69,10 @@
   font-weight: normal;
 }
 
-/* Hide empty error messages */
 .field-error:empty {
   display: none;
 }
 
-/* Invalid input borders */
 .form-card input.invalid,
 .form-card select.invalid,
 .form-card textarea.invalid {
@@ -85,7 +80,6 @@
   outline: none;
 }
 
-/* Disabled submit button */
 .form-card button:disabled {
   opacity: 0.6;
   cursor: not-allowed;

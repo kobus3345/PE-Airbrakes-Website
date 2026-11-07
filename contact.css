@@ -56,14 +56,12 @@
   opacity: 1;
 }
 
-/* Input example placeholders */
 .form-card input::placeholder,
 .form-card textarea::placeholder {
   color: #999;
   opacity: 1;
 }
 
-/* Validation error messages */
 .field-error {
   display: block;
   color: #d93025;
@@ -73,12 +71,10 @@
   font-weight: normal;
 }
 
-/* Hide empty error messages */
 .field-error:empty {
   display: none;
 }
 
-/* Invalid input borders */
 .form-card input.invalid,
 .form-card textarea.invalid {
   border: 1px solid #d93025 !important;

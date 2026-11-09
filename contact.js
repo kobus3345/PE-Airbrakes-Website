@@ -1,6 +1,6 @@
 (function () {
     const firebaseConfig = {
-        apiKey: "YOUR_ACTUAL_FIREBASE_API_KEY",
+        apiKey: "AIzaSyAJzxHxVIGd4vsaI52HvttClgUqBHDtuCs",
         authDomain: "pe-airbrakes-dataflow.firebaseapp.com",
         databaseURL: "https://pe-airbrakes-dataflow-default-rtdb.firebaseio.com",
         projectId: "pe-airbrakes-dataflow",

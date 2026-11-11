@@ -1,20 +1,14 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Request a Quote | PE Airbrakes</title>
-
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="quote.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quote.css">
 </head>
-
 <body>
-
-    <!-- Utility Bar -->
     <div class="utility">
         <div class="container">
             <a href="tel:0414547473">☎ 041 454 7473</a>
@@ -23,16 +17,12 @@
         </div>
     </div>
 
-
-    <!-- Navigation -->
     <header>
         <div class="container nav">
-
             <a class="brand" href="index.html">
                 <span class="logo">
-                    <img src="../src/imports/loadinglogo.png" alt="" />
+                    <img src="../src/imports/loadinglogo.png" alt="">
                 </span>
-
                 <span>
                     <b>PE <i>AIRBRAKES</i></b>
                     <small>TRUCK BRAKE SPECIALISTS</small>
@@ -47,33 +37,20 @@
             </nav>
 
             <div class="actions">
-
                 <a class="button tooltip" href="quote.html">
                     <span class="quote-icon"></span>
                     Get a Quote
-
-                    <span class="tooltip-text">
-                        Request an estimated cost for the selected vehicle
-                        service by providing your contact details and
-                        describing the issue.
-                    </span>
+                    <span class="tooltip-text">Request an estimated cost for the selected vehicle service by providing your contact details and describing the issue.</span>
                 </a>
 
                 <a class="button tooltip" href="book.html">
                     <span class="calendar-icon"></span>
-                    Book your Vehicle
-
-                    <span class="tooltip-text">
-                        Schedule your truck for a brake inspection or repair.
-                    </span>
+                    Book Repairs or Service for your Vehicle
+                    <span class="tooltip-text">Schedule your truck for a brake inspection or repair.</span>
                 </a>
-
             </div>
 
-            <button class="menu" type="button" aria-label="Open navigation menu">
-                ☰
-            </button>
-
+            <button class="menu" type="button" aria-label="Open navigation menu">☰</button>
         </div>
 
         <div class="mobile-links">
@@ -82,450 +59,241 @@
             <a href="about.html">About Us</a>
             <a href="contact.html">Contact</a>
             <a href="quote.html">Get a Quote</a>
-            <a href="book.html">Book a Vehicle</a>
+            <a href="book.html">Book Repairs or Service for your Vehicle</a>
         </div>
-
     </header>
 
-
-    <!-- Main Content -->
     <main class="container page narrow">
-
         <p class="eyebrow">Get a Quote</p>
-
         <h1>Request a Free Quote</h1>
+        <p class="lead">Fill in the form below and our team will get back to you with a detailed quote.</p>
 
-        <p class="lead">
-            Fill in the form below and our team will get back to you with a detailed
-            quote.
-        </p>
-
-
-        <!-- Quote Form -->
         <form class="form-card" id="quote-form" novalidate>
-
             <h2>Contact Information</h2>
 
             <div class="form-grid">
-
-                <!-- Full Name -->
                 <label>
                     Full Name
-
-                    <input
-                        name="name"
-                        type="text"
-                        id="name"
-                        placeholder="e.g. John Smith"
-                        maxlength="100"
-                        required
-                    />
-
+                    <input name="name" type="text" id="name" placeholder="e.g. John Smith" maxlength="100" required>
                     <small class="field-error" id="name-error"></small>
                 </label>
 
-
-                <!-- Company Name -->
                 <label>
                     Company Name
-
-                    <input
-                        name="company"
-                        type="text"
-                        id="company"
-                        placeholder="e.g. Smith Transport (optional)"
-                        maxlength="100"
-                    />
-
+                    <input name="company" type="text" id="company" placeholder="e.g. Smith Transport (optional)" maxlength="100">
                     <small class="field-error" id="company-error"></small>
                 </label>
 
-
-                <!-- Phone Number -->
                 <label>
                     Phone Number
-
-                    <input
-                        name="phone"
-                        type="tel"
-                        id="phone"
-                        placeholder="e.g. 082 123 4567"
-                        maxlength="20"
-                        required
-                    />
-
+                    <input name="phone" type="tel" id="phone" placeholder="e.g. 082 123 4567" maxlength="20" required>
                     <small class="field-error" id="phone-error"></small>
                 </label>
 
-
-                <!-- Email Address -->
                 <label>
                     Email Address
-
-                    <input
-                        name="email"
-                        type="email"
-                        id="email"
-                        placeholder="e.g. john@example.com"
-                        maxlength="254"
-                        required
-                    />
-
+                    <input name="email" type="email" id="email" placeholder="e.g. john@example.com" maxlength="254" required>
                     <small class="field-error" id="email-error"></small>
                 </label>
 
-
-                <!-- Vehicle Type -->
                 <label>
                     Truck / Vehicle Type
-
                     <select name="vehicleType" id="vehicleType" required>
                         <option value="">Select type...</option>
-
-                        <option value="Rigid Truck">
-                            Rigid Truck
-                        </option>
-
-                        <option value="Interlink / Semi-truck">
-                            Interlink / Semi-truck
-                        </option>
-
-                        <option value="B-train / Multi-combination">
-                            B-train / Multi-combination
-                        </option>
-
-                        <option value="Other Heavy Vehicle">
-                            Other Heavy Vehicle
-                        </option>
+                        <option value="Rigid Truck">Rigid Truck</option>
+                        <option value="Interlink / Semi-truck">Interlink / Semi-truck</option>
+                        <option value="B-train / Multi-combination">B-train / Multi-combination</option>
+                        <option value="Other Heavy Vehicle">Other Heavy Vehicle</option>
                     </select>
-
-                    <small class="field-description" id="vehicle-description">
-                        Select your vehicle type to see a description.
-                    </small>
-
+                    <small class="field-description" id="vehicle-description">Select your vehicle type to see a description.</small>
                     <small class="field-error" id="vehicleType-error"></small>
                 </label>
 
-
-                <!-- Nature of Issue -->
                 <label>
                     Nature of Issue
-
                     <select name="service" id="service" required>
                         <option value="">Select service...</option>
-
-                        <option value="Air Brake System Repair">
-                            Air Brake System Repair
-                        </option>
-
-                        <option value="Brake Drum / Disc Repair">
-                            Brake Drum / Disc Repair
-                        </option>
-
-                        <option value="ABS Diagnostics">
-                            ABS Diagnostics
-                        </option>
-
-                        <option value="Safety Inspection">
-                            Safety Inspection
-                        </option>
+                        <option value="Air Brake System Repair">Air Brake System Repair</option>
+                        <option value="Brake Drum / Disc Repair">Brake Drum / Disc Repair</option>
+                        <option value="ABS Diagnostics">ABS Diagnostics</option>
+                        <option value="Safety Inspection">Safety Inspection</option>
                     </select>
-
-                    <small class="field-description" id="service-description">
-                        Select a service to see what it includes.
-                    </small>
-
+                    <small class="field-description" id="service-description">Select a service to see what it includes.</small>
                     <small class="field-error" id="service-error"></small>
                 </label>
 
-
-                <!-- Additional Details -->
                 <label class="full">
                     Additional Details
-
-                    <textarea
-                        name="message"
-                        rows="5"
-                        id="message"
-                        maxlength="1000"
-                        placeholder="Describe the problem with your vehicle, any warning lights, unusual noises, air leaks or other relevant details..."
-                    ></textarea>
-
+                    <textarea name="message" id="message" rows="5" maxlength="1000" placeholder="Describe the problem with your vehicle, any warning lights, unusual noises, air leaks or other relevant details..."></textarea>
                     <small class="field-error" id="message-error"></small>
                 </label>
-
             </div>
 
-
-            <!-- Submit Button -->
-            <button class="button" type="submit">
-                Submit Quote Request
-            </button>
-
+            <button class="button" type="submit">Submit Quote Request</button>
         </form>
-
     </main>
 
-
-    <!-- Footer -->
     <footer>
-        <div class="copyright">
-            © 2026 PE Airbrakes. All rights reserved.
-        </div>
+        <div class="copyright">© 2026 PE Airbrakes. All rights reserved.</div>
     </footer>
 
+    <script>
+        const menu = document.querySelector(".menu");
+        const links = document.querySelector(".mobile-links");
 
-    <!-- Page JavaScript -->
-    
-<script>
-    // Mobile navigation menu
-    const menu = document.querySelector(".menu");
-    const links = document.querySelector(".mobile-links");
-
-    menu.addEventListener("click", () => {
-        links.classList.toggle("open");
-    });
-
-
-    // Get the quote form and form elements
-    const form = document.querySelector("#quote-form");
-
-    const vehicleType = document.querySelector("#vehicleType");
-    const service = document.querySelector("#service");
-
-    const vehicleDescription = document.querySelector("#vehicle-description");
-    const serviceDescription = document.querySelector("#service-description");
-
-
-    // Vehicle type descriptions
-    const vehicleDescriptions = {
-        "Rigid Truck":
-            "A rigid truck has its cab and load-carrying body mounted on one chassis. It is commonly used to transport goods and materials.",
-
-        "Interlink / Semi-truck":
-            "A semi-truck uses a tractor unit connected to a semi-trailer. An interlink combination connects multiple trailers to transport larger loads.",
-
-        "B-train / Multi-combination":
-            "A B-train or multi-combination vehicle consists of multiple connected trailers, allowing it to transport large quantities of goods.",
-
-        "Other Heavy Vehicle":
-            "Choose this option for a heavy vehicle that does not fit into the other categories. Please provide more details about the vehicle below."
-    };
-
-
-    // Service descriptions
-    const serviceDescriptions = {
-        "Air Brake System Repair":
-            "Inspection, diagnosis and repair of compressed-air braking systems, including air leaks, valves, pipes and other brake components.",
-
-        "Brake Drum / Disc Repair":
-            "Inspection and repair of brake drums and discs to identify wear, damage and braking performance problems.",
-
-        "ABS Diagnostics":
-            "Diagnostic testing of the Anti-lock Braking System (ABS), including sensors, wiring and related components.",
-
-        "Safety Inspection":
-            "A general brake-system inspection to identify faults, worn components and potential safety concerns."
-    };
-
-
-    // Update vehicle description when selection changes
-    vehicleType.addEventListener("change", () => {
-        vehicleDescription.textContent =
-            vehicleDescriptions[vehicleType.value] ||
-            "Select your vehicle type to see a description.";
-
-        clearError("vehicleType");
-    });
-
-
-    // Update service description when selection changes
-    service.addEventListener("change", () => {
-        serviceDescription.textContent =
-            serviceDescriptions[service.value] ||
-            "Select a service to see what it includes.";
-
-        clearError("service");
-    });
-
-
-    // Display validation error
-    function showError(field, message) {
-        const input = form.elements[field];
-        const error = document.getElementById(field + "-error");
-
-        if (input) {
-            input.classList.add("invalid");
-            input.setAttribute("aria-invalid", "true");
-        }
-
-        if (error) {
-            error.textContent = message;
-        }
-    }
-
-
-    // Clear validation error
-    function clearError(field) {
-        const input = form.elements[field];
-        const error = document.getElementById(field + "-error");
-
-        if (input) {
-            input.classList.remove("invalid");
-            input.removeAttribute("aria-invalid");
-        }
-
-        if (error) {
-            error.textContent = "";
-        }
-    }
-
-
-    // Validate South African phone numbers
-    function validateSouthAfricanPhone(phone) {
-        const cleaned = phone.replace(/[\s()-]/g, "");
-
-        return /^(?:0[1-8]\d{8}|\+27[1-8]\d{8})$/.test(cleaned);
-    }
-
-
-    // Validate email address
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-    }
-
-
-    // Validate full name
-    function validateName(name) {
-        return name.length >= 2 &&
-            /^[\p{L}\s'-]+$/u.test(name);
-    }
-
-
-    // Validate all form fields
-    function validateForm() {
-        let valid = true;
-
-        const data = new FormData(form);
-
-        const name = data.get("name").trim();
-        const company = data.get("company").trim();
-        const phone = data.get("phone").trim();
-        const email = data.get("email").trim();
-        const selectedVehicle = data.get("vehicleType");
-        const selectedService = data.get("service");
-        const message = data.get("message").trim();
-
-
-        // Clear previous errors
-        [
-            "name",
-            "company",
-            "phone",
-            "email",
-            "vehicleType",
-            "service",
-            "message"
-        ].forEach(clearError);
-
-
-        // Name validation
-        if (!name) {
-            showError("name", "Please enter your full name.");
-            valid = false;
-
-        } else if (!validateName(name)) {
-            showError(
-                "name",
-                "Enter a valid name using letters, spaces, apostrophes or hyphens."
-            );
-            valid = false;
-        }
-
-
-        // Company validation
-        if (company.length > 100) {
-            showError(
-                "company",
-                "Company name cannot exceed 100 characters."
-            );
-            valid = false;
-        }
-
-
-        // Phone validation
-        if (!phone) {
-            showError("phone", "Please enter your phone number.");
-            valid = false;
-
-        } else if (!validateSouthAfricanPhone(phone)) {
-            showError(
-                "phone",
-                "Enter a valid South African phone number, e.g. 082 123 4567 or 041 123 4567."
-            );
-            valid = false;
-        }
-
-
-        // Email validation
-        if (!email) {
-            showError("email", "Please enter your email address.");
-            valid = false;
-
-        } else if (!validateEmail(email)) {
-            showError(
-                "email",
-                "Please enter a valid email address."
-            );
-            valid = false;
-        }
-
-
-        // Vehicle type validation
-        if (!selectedVehicle) {
-            showError(
-                "vehicleType",
-                "Please select your vehicle type."
-            );
-            valid = false;
-        }
-
-
-        // Service validation
-        if (!selectedService) {
-            showError(
-                "service",
-                "Please select the service you require."
-            );
-            valid = false;
-        }
-
-
-        // Additional details validation
-        if (message.length > 1000) {
-            showError(
-                "message",
-                "Additional details cannot exceed 1000 characters."
-            );
-            valid = false;
-        }
-
-        return valid;
-    }
-
-
-    // Clear errors when the user edits text fields
-    ["name", "company", "phone", "email", "message"].forEach(field => {
-        form.elements[field].addEventListener("input", () => {
-            clearError(field);
+        menu.addEventListener("click", () => {
+            links.classList.toggle("open");
         });
-    });
 
-</script>
+        const form = document.querySelector("#quote-form");
+        const vehicleType = document.querySelector("#vehicleType");
+        const service = document.querySelector("#service");
+        const vehicleDescription = document.querySelector("#vehicle-description");
+        const serviceDescription = document.querySelector("#service-description");
 
- <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+        const vehicleDescriptions = {
+            "Rigid Truck": "A rigid truck has its cab and load-carrying body mounted on one chassis. It is commonly used to transport goods and materials.",
+            "Interlink / Semi-truck": "A semi-truck uses a tractor unit connected to a semi-trailer. An interlink combination connects multiple trailers to transport larger loads.",
+            "B-train / Multi-combination": "A B-train or multi-combination vehicle consists of multiple connected trailers, allowing it to transport large quantities of goods.",
+            "Other Heavy Vehicle": "Choose this option for a heavy vehicle that does not fit into the other categories. Please provide more details about the vehicle below."
+        };
+
+        const serviceDescriptions = {
+            "Air Brake System Repair": "Inspection, diagnosis and repair of compressed-air braking systems, including air leaks, valves, pipes and other brake components.",
+            "Brake Drum / Disc Repair": "Inspection and repair of brake drums and discs to identify wear, damage and braking performance problems.",
+            "ABS Diagnostics": "Diagnostic testing of the Anti-lock Braking System (ABS), including sensors, wiring and related components.",
+            "Safety Inspection": "A general brake-system inspection to identify faults, worn components and potential safety concerns."
+        };
+
+        vehicleType.addEventListener("change", () => {
+            vehicleDescription.textContent = vehicleDescriptions[vehicleType.value] || "Select your vehicle type to see a description.";
+            clearError("vehicleType");
+        });
+
+        service.addEventListener("change", () => {
+            serviceDescription.textContent = serviceDescriptions[service.value] || "Select a service to see what it includes.";
+            clearError("service");
+        });
+
+        function showError(field, message) {
+            const input = form.elements[field];
+            const error = document.getElementById(field + "-error");
+
+            if (input) {
+                input.classList.add("invalid");
+                input.setAttribute("aria-invalid", "true");
+            }
+
+            if (error) {
+                error.textContent = message;
+            }
+        }
+
+        function clearError(field) {
+            const input = form.elements[field];
+            const error = document.getElementById(field + "-error");
+
+            if (input) {
+                input.classList.remove("invalid");
+                input.removeAttribute("aria-invalid");
+            }
+
+            if (error) {
+                error.textContent = "";
+            }
+        }
+
+        function validateSouthAfricanPhone(phone) {
+            const cleaned = phone.replace(/[\s()-]/g, "");
+            return /^(?:0[1-8]\d{8}|\+27[1-8]\d{8})$/.test(cleaned);
+        }
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+        }
+
+        function validateName(name) {
+            return name.length >= 2 && /^[\p{L}\s'-]+$/u.test(name);
+        }
+
+        function validateForm() {
+            let valid = true;
+
+            const data = new FormData(form);
+            const name = data.get("name").trim();
+            const company = data.get("company").trim();
+            const phone = data.get("phone").trim();
+            const email = data.get("email").trim();
+            const selectedVehicle = data.get("vehicleType");
+            const selectedService = data.get("service");
+            const message = data.get("message").trim();
+
+            [
+                "name",
+                "company",
+                "phone",
+                "email",
+                "vehicleType",
+                "service",
+                "message"
+            ].forEach(clearError);
+
+            if (!name) {
+                showError("name", "Please enter your full name.");
+                valid = false;
+            } else if (!validateName(name)) {
+                showError("name", "Enter a valid name using letters, spaces, apostrophes or hyphens.");
+                valid = false;
+            }
+
+            if (company.length > 100) {
+                showError("company", "Company name cannot exceed 100 characters.");
+                valid = false;
+            }
+
+            if (!phone) {
+                showError("phone", "Please enter your phone number.");
+                valid = false;
+            } else if (!validateSouthAfricanPhone(phone)) {
+                showError("phone", "Enter a valid South African phone number, e.g. 082 123 4567 or 041 123 4567.");
+                valid = false;
+            }
+
+            if (!email) {
+                showError("email", "Please enter your email address.");
+                valid = false;
+            } else if (!validateEmail(email)) {
+                showError("email", "Please enter a valid email address.");
+                valid = false;
+            }
+
+            if (!selectedVehicle) {
+                showError("vehicleType", "Please select your vehicle type.");
+                valid = false;
+            }
+
+            if (!selectedService) {
+                showError("service", "Please select the service you require.");
+                valid = false;
+            }
+
+            if (message.length > 1000) {
+                showError("message", "Additional details cannot exceed 1000 characters.");
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        ["name", "company", "phone", "email", "message"].forEach(field => {
+            form.elements[field].addEventListener("input", () => {
+                clearError(field);
+            });
+        });
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
     <script src="./quote.js"></script>
-
 </body>
 </html>

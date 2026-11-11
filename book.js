@@ -1,3 +1,4 @@
+
 (function () {
     const firebaseConfig = {
         apiKey: "AIzaSyAJzxHxVIGd4vsaI52HvttClgUqBHDtuCs",
@@ -17,14 +18,12 @@
     const bookingDB = firebase.database().ref("bookings");
     const bookingForm = document.getElementById("book-form");
     const bookingSubmitButton = document.getElementById("submit-button");
+    const modelSelect = document.getElementById("modelSelect");
+    const modelInput = document.getElementById("model");
+    const makeSelect = document.getElementById("make");
 
-    if (!bookingForm) {
-        console.error("Booking form was not found.");
-        return;
-    }
-
-    if (!bookingSubmitButton) {
-        console.error("Submit button was not found.");
+    if (!bookingForm || !bookingSubmitButton || !modelSelect || !modelInput || !makeSelect) {
+        console.error("One or more booking form elements were not found.");
         return;
     }
 
@@ -36,6 +35,14 @@
     function getElementVal(name) {
         const field = bookingForm.elements[name];
         return field ? field.value.trim() : "";
+    }
+
+    function getSelectedModel() {
+        if (modelSelect.value === "Other") {
+            return modelInput.value.trim();
+        }
+
+        return modelSelect.value;
     }
 
     async function submitBooking(e) {
@@ -55,6 +62,14 @@
             return;
         }
 
+        const selectedModel = getSelectedModel();
+
+        if (!selectedModel) {
+            alert("Please select or enter your truck model.");
+            modelSelect.focus();
+            return;
+        }
+
         const bookingData = {
             customerName: getElementVal("name"),
             companyName: getElementVal("company"),
@@ -62,8 +77,8 @@
             customerEmail: getElementVal("email"),
             registrationNumber: getElementVal("registration").toUpperCase(),
             vehicleType: getElementVal("vehicleType"),
-            vehicleMake: getElementVal("make"),
-            vehicleModel: getElementVal("model"),
+            vehicleMake: makeSelect.value,
+            vehicleModel: selectedModel,
             serviceType: getElementVal("service"),
             preferredDate: getElementVal("date"),
             preferredTime: getElementVal("time"),
@@ -98,7 +113,7 @@
             heading.textContent = "Booking Received!";
 
             const paragraph = document.createElement("p");
-            paragraph.textContent = `Thank you, ${bookingData.customerName}. Your booking for vehicle ${bookingData.registrationNumber} has been received. Our team will contact you to confirm your appointment.`;
+            paragraph.textContent = `Thank you, ${bookingData.customerName}. Your booking for ${bookingData.vehicleMake} ${bookingData.vehicleModel}, registration ${bookingData.registrationNumber}, has been received. Our team will contact you to confirm your appointment.`;
 
             const bookingReference = document.createElement("p");
             bookingReference.textContent = "Booking Reference: " + newBooking.key;

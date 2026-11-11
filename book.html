@@ -1,12 +1,12 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Book your Vehicle | PE Airbrakes</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="book.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="book.css">
 </head>
 <body>
     <div class="utility">
@@ -21,40 +21,45 @@
         <div class="container nav">
             <a class="brand" href="index.html">
                 <span class="logo">
-                    <img src="../src/imports/loadinglogo.png" alt="" />
+                    <img src="../src/imports/loadinglogo.png" alt="">
                 </span>
                 <span>
                     <b>PE <i>AIRBRAKES</i></b>
                     <small>TRUCK BRAKE SPECIALISTS</small>
                 </span>
             </a>
+
             <nav>
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="about.html">About Us</a>
                 <a href="contact.html">Contact</a>
             </nav>
+
             <div class="actions">
                 <a class="button tooltip" href="quote.html">
                     <span class="quote-icon"></span>
                     Get a Quote
                     <span class="tooltip-text">Submit your vehicle details and describe the issue to request a free quote from PE Airbrakes.</span>
                 </a>
+
                 <a class="button tooltip" href="book.html">
                     <span class="calendar-icon"></span>
-                    Book your Vehicle
+                    Book Repairs or Service for your Vehicle
                     <span class="tooltip-text">Schedule your truck for a brake inspection or repair.</span>
                 </a>
             </div>
+
             <button class="menu" type="button" aria-label="Open navigation menu">☰</button>
         </div>
+
         <div class="mobile-links">
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="about.html">About Us</a>
             <a href="contact.html">Contact</a>
             <a href="quote.html">Get a Quote</a>
-            <a href="book.html">Book a Vehicle</a>
+            <a href="book.html">Book Repairs or Service for your Vehicle</a>
         </div>
     </header>
 
@@ -65,32 +70,38 @@
 
         <form class="form-card" id="book-form" novalidate>
             <h2>Owner and Vehicle Details</h2>
+
             <div class="form-grid">
                 <label>
                     Full Name
-                    <input name="name" type="text" id="name" placeholder="e.g. John Smith" autocomplete="name" maxlength="100" required />
+                    <input name="name" type="text" id="name" placeholder="e.g. John Smith" autocomplete="name" maxlength="100" required>
                     <small class="field-error" id="name-error"></small>
                 </label>
+
                 <label>
                     Company Name
-                    <input name="company" type="text" id="company" placeholder="e.g. Smith Transport (optional)" autocomplete="organization" maxlength="100" />
+                    <input name="company" type="text" id="company" placeholder="e.g. Smith Transport (optional)" autocomplete="organization" maxlength="100">
                     <small class="field-error" id="company-error"></small>
                 </label>
+
                 <label>
                     Phone Number
-                    <input name="phone" type="tel" id="phone" placeholder="e.g. 082 123 4567 or 041 123 4567" autocomplete="tel" required />
+                    <input name="phone" type="tel" id="phone" placeholder="e.g. 082 123 4567 or 041 123 4567" autocomplete="tel" required>
                     <small class="field-error" id="phone-error"></small>
                 </label>
+
                 <label>
                     Email Address
-                    <input name="email" type="email" id="email" placeholder="e.g. john@example.com" autocomplete="email" required />
+                    <input name="email" type="email" id="email" placeholder="e.g. john@example.com" autocomplete="email" required>
                     <small class="field-error" id="email-error"></small>
                 </label>
+
                 <label>
                     Registration Number
-                    <input name="registration" type="text" id="registration" placeholder="e.g. CA 123-456 or ABC 123 EC" maxlength="15" autocomplete="off" required />
+                    <input name="registration" type="text" id="registration" placeholder="e.g. CA 123-456 or ABC 123 EC" maxlength="15" autocomplete="off" required>
                     <small class="field-error" id="registration-error"></small>
                 </label>
+
                 <label>
                     Vehicle Type
                     <select name="vehicleType" id="vehicleType" required>
@@ -102,16 +113,53 @@
                     <small class="field-description" id="vehicle-description">Select your vehicle type to see a description.</small>
                     <small class="field-error" id="vehicleType-error"></small>
                 </label>
+
                 <label>
                     Make
-                    <input name="make" type="text" id="make" placeholder="e.g. Mercedes-Benz" maxlength="50" required />
+                    <select name="make" id="make" required>
+                        <option value="">Select make...</option>
+                        <option value="Mercedes-Benz">Mercedes-Benz</option>
+                        <option value="MAN">MAN</option>
+                        <option value="Volvo">Volvo</option>
+                        <option value="Scania">Scania</option>
+                        <option value="Hino">Hino</option>
+                        <option value="Isuzu">Isuzu</option>
+                        <option value="UD Trucks">UD Trucks</option>
+                        <option value="Fuso">Fuso</option>
+                        <option value="FAW">FAW</option>
+                        <option value="Foton">Foton</option>
+                        <option value="Sinotruk (HOWO)">Sinotruk (HOWO)</option>
+                        <option value="Powerstar">Powerstar</option>
+                        <option value="JAC">JAC</option>
+                        <option value="Shacman">Shacman</option>
+                        <option value="Tata">Tata</option>
+                        <option value="Eicher">Eicher</option>
+                        <option value="Ashok Leyland">Ashok Leyland</option>
+                        <option value="IVECO">IVECO</option>
+                        <option value="Freightliner">Freightliner</option>
+                        <option value="International">International</option>
+                        <option value="Western Star">Western Star</option>
+                        <option value="Kenworth">Kenworth</option>
+                        <option value="Peterbilt">Peterbilt</option>
+                        <option value="DAF">DAF</option>
+                        <option value="Renault Trucks">Renault Trucks</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="JMC">JMC</option>
+                    </select>
                     <small class="field-error" id="make-error"></small>
                 </label>
+
                 <label>
                     Model
-                    <input name="model" type="text" id="model" placeholder="e.g. Actros" maxlength="50" required />
+                    <select id="modelSelect" required disabled>
+                        <option value="">Select make first...</option>
+                    </select>
+                    <input name="model" type="text" id="model" placeholder="Select Other to enter your model" maxlength="50" required readonly>
+                    <small class="field-description" id="model-description">Select a make first, then choose a model.</small>
                     <small class="field-error" id="model-error"></small>
                 </label>
+
                 <label>
                     Service Required
                     <select name="service" id="service" required>
@@ -124,11 +172,13 @@
                     <small class="field-description" id="service-description">Select your required service to see a description.</small>
                     <small class="field-error" id="service-error"></small>
                 </label>
+
                 <label>
                     Preferred Date
-                    <input name="date" id="date" type="date" required />
+                    <input name="date" id="date" type="date" required>
                     <small class="field-error" id="date-error"></small>
                 </label>
+
                 <label>
                     Preferred Time
                     <select name="time" id="time" required>
@@ -140,12 +190,14 @@
                     </select>
                     <small class="field-error" id="time-error"></small>
                 </label>
+
                 <label class="full">
                     Problem Description
                     <textarea name="notes" id="notes" rows="4" maxlength="1000" placeholder="Describe the problem. For example: The truck is losing air pressure, the brakes are making a noise, or the ABS warning light is on."></textarea>
                     <small class="field-error" id="notes-error"></small>
                 </label>
             </div>
+
             <p class="notice">⚠ Please arrange alternative transport. We will confirm repair costs before proceeding.</p>
             <button class="button" id="submit-button" type="submit">Confirm Booking</button>
         </form>
@@ -176,11 +228,46 @@
             "Safety Inspection": "A general inspection of the vehicle's braking system to identify potential faults, worn components and safety concerns."
         };
 
+        const truckModels = {
+            "Mercedes-Benz": ["Actros", "Arocs", "Atego", "Axor", "Econic", "Other"],
+            "MAN": ["TGL", "TGM", "TGS", "TGX", "TGA", "Other"],
+            "Volvo": ["FH", "FH16", "FM", "FMX", "FE", "FL", "Other"],
+            "Scania": ["P-Series", "G-Series", "R-Series", "S-Series", "L-Series", "Other"],
+            "Hino": ["200 Series", "300 Series", "500 Series", "700 Series", "Other"],
+            "Isuzu": ["N-Series", "F-Series", "FX-Series", "FRR", "FTR", "FVR", "FVZ", "Other"],
+            "UD Trucks": ["Kuzer", "Croner", "Quester", "Quon", "Other"],
+            "Fuso": ["Canter", "Fighter", "Shogun", "Other"],
+            "FAW": ["J5N", "J6", "JH6", "J7", "Other"],
+            "Foton": ["Miler", "Aumark", "Auman", "Other"],
+            "Sinotruk (HOWO)": ["HOWO", "HOWO MAX", "HOWO T5G", "HOWO T7H", "Other"],
+            "Powerstar": ["VX", "TX", "Other"],
+            "JAC": ["N-Series", "K-Series", "Gallop", "Other"],
+            "Shacman": ["X3000", "X5000", "F3000", "H3000", "Other"],
+            "Tata": ["LPT", "Ultra", "Prima", "Other"],
+            "Eicher": ["Pro 2000", "Pro 3000", "Pro 5000", "Other"],
+            "Ashok Leyland": ["Boss", "Partner", "Ecomet", "Captain", "Other"],
+            "IVECO": ["Daily", "Eurocargo", "Stralis", "S-Way", "T-Way", "Other"],
+            "Freightliner": ["Cascadia", "Argosy", "Coronado", "Other"],
+            "International": ["ProStar", "LT Series", "LoneStar", "WorkStar", "Other"],
+            "Western Star": ["4700", "4800", "4900", "5700", "6900", "Other"],
+            "Kenworth": ["T410", "T610", "T659", "T680", "T880", "Other"],
+            "Peterbilt": ["Model 389", "Model 579", "Model 567", "Other"],
+            "DAF": ["LF", "CF", "XF", "XG", "Other"],
+            "Renault Trucks": ["D Series", "C Series", "K Series", "T Series", "Other"],
+            "Ford": ["Cargo", "F-Series", "Other"],
+            "Hyundai": ["Mighty", "EX Series", "Xcient", "Other"],
+            "JMC": ["Carrying", "Conquer", "Other"]
+        };
+
         const vehicleSelect = document.getElementById("vehicleType");
         const vehicleDescription = document.getElementById("vehicle-description");
         const serviceSelect = document.getElementById("service");
         const serviceDescription = document.getElementById("service-description");
-        const form = document.querySelector("#book-form");
+        const makeSelect = document.getElementById("make");
+        const modelSelect = document.getElementById("modelSelect");
+        const modelInput = document.getElementById("model");
+        const modelDescription = document.getElementById("model-description");
+        const form = document.getElementById("book-form");
         const dateInput = document.getElementById("date");
 
         vehicleSelect.addEventListener("change", function () {
@@ -191,6 +278,50 @@
         serviceSelect.addEventListener("change", function () {
             serviceDescription.textContent = serviceDescriptions[this.value] || "Select your required service to see a description.";
             clearError("service");
+        });
+
+        makeSelect.addEventListener("change", function () {
+            const selectedMake = this.value;
+
+            modelSelect.innerHTML = '<option value="">Select model...</option>';
+            modelInput.value = "";
+            modelInput.readOnly = true;
+            modelInput.placeholder = "Select Other to enter your model";
+
+            if (!selectedMake || !truckModels[selectedMake]) {
+                modelSelect.disabled = true;
+                modelDescription.textContent = "Select a make first, then choose a model.";
+            } else {
+                truckModels[selectedMake].forEach(model => {
+                    const option = document.createElement("option");
+                    option.value = model;
+                    option.textContent = model;
+                    modelSelect.appendChild(option);
+                });
+
+                modelSelect.disabled = false;
+                modelDescription.textContent = "Select your truck model. Choose Other if your model is not listed.";
+            }
+
+            clearError("make");
+            clearError("model");
+        });
+
+        modelSelect.addEventListener("change", function () {
+            if (this.value === "Other") {
+                modelInput.readOnly = false;
+                modelInput.value = "";
+                modelInput.placeholder = "Enter your truck model";
+                modelDescription.textContent = "Enter your truck model in the field below.";
+                modelInput.focus();
+            } else {
+                modelInput.readOnly = true;
+                modelInput.value = this.value;
+                modelInput.placeholder = "Your selected model";
+                modelDescription.textContent = "Your selected truck model.";
+            }
+
+            clearError("model");
         });
 
         function getLocalDate() {
@@ -209,6 +340,11 @@
                 field.setAttribute("aria-invalid", "true");
             }
 
+            if (fieldName === "model") {
+                modelSelect.classList.add("invalid");
+                modelSelect.setAttribute("aria-invalid", "true");
+            }
+
             if (error) {
                 error.textContent = message;
             }
@@ -221,6 +357,11 @@
             if (field) {
                 field.classList.remove("invalid");
                 field.removeAttribute("aria-invalid");
+            }
+
+            if (fieldName === "model") {
+                modelSelect.classList.remove("invalid");
+                modelSelect.removeAttribute("aria-invalid");
             }
 
             if (error) {
@@ -249,7 +390,21 @@
         function validateForm() {
             let isValid = true;
 
-            const fields = ["name", "company", "phone", "email", "registration", "vehicleType", "make", "model", "service", "date", "time", "notes"];
+            const fields = [
+                "name",
+                "company",
+                "phone",
+                "email",
+                "registration",
+                "vehicleType",
+                "make",
+                "model",
+                "service",
+                "date",
+                "time",
+                "notes"
+            ];
+
             fields.forEach(clearError);
 
             const name = form.querySelector("[name='name']").value.trim();
@@ -308,20 +463,20 @@
                 isValid = false;
             }
 
-            const make = form.querySelector("[name='make']").value.trim();
+            const make = makeSelect.value.trim();
 
             if (!make) {
-                showError("make", "Please enter the vehicle make.");
-                isValid = false;
-            } else if (make.length > 50) {
-                showError("make", "Vehicle make cannot exceed 50 characters.");
+                showError("make", "Please select the vehicle make.");
                 isValid = false;
             }
 
-            const model = form.querySelector("[name='model']").value.trim();
+            const model = modelInput.value.trim();
 
-            if (!model) {
-                showError("model", "Please enter the vehicle model.");
+            if (!modelSelect.value) {
+                showError("model", "Please select a vehicle model.");
+                isValid = false;
+            } else if (modelSelect.value === "Other" && !model) {
+                showError("model", "Please enter your truck model.");
                 isValid = false;
             } else if (model.length > 50) {
                 showError("model", "Vehicle model cannot exceed 50 characters.");
@@ -360,7 +515,7 @@
 
         const fieldsToValidate = form.querySelectorAll("input, select, textarea");
 
-        fieldsToValidate.forEach((field) => {
+        fieldsToValidate.forEach(field => {
             field.addEventListener("input", () => {
                 if (field.name) clearError(field.name);
             });

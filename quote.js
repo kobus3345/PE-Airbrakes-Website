@@ -1,4 +1,3 @@
-
 const firebaseConfig = {
     apiKey: "AIzaSyAJzxHxVIGd4vsaI52HvttClgUqBHDtuCs",
     authDomain: "pe-airbrakes-dataflow.firebaseapp.com",
